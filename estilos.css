@@ -1,0 +1,294 @@
+body {
+    margin: 0;
+    background-color: #dddddd;
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    /*fondo*/
+    min-height: 100vh;
+    position: relative; /* Prepara el terreno para el fondo */
+    background-color: #000; /* Color de respaldo si la imagen falla */
+    background-image: url('img/fondo.webp');
+    background-size: cover; /* Ajusta la imagen para que llene la pantalla sin estirarse */
+    background-position: center; /* Centra la imagen */
+    background-repeat: no-repeat; /* Evita que la imagen se duplique */
+
+    
+
+}
+
+h1 {
+    font-family: "Rubik Glitch", system-ui;
+    color: #ff0;
+}
+
+p {
+    font-family: "Roboto Serif", serif;
+}
+
+header {
+    background-color: black;
+    padding: 3rem 2rem;
+}
+
+
+
+header h1 {
+    font-size: 4rem;
+    text-align: center;
+}
+
+.container {
+    width: 400px;
+    margin: 0 auto; 
+}
+
+section article {
+    transition: all 0.3s ease;
+    background-color: #ff0;
+    margin: 1rem 0;
+    border-radius: 20px;
+    padding: 0.25rem 0;
+    cursor: pointer;
+}
+
+h2  {
+    font-family: "Shadows Into Light", cursive;
+    color: rgb(44, 44, 44);
+}
+
+section article h2, section article p {
+    margin: 1rem;
+}
+
+section article:hover {
+    box-shadow: 0.3rem 0.3rem 0.6rem ;
+}
+
+.footer {
+     background-color: #000;
+    padding: 3rem;
+
+    margin-top: auto;
+    
+}
+
+.pie {
+    font-family: "Roboto", sans-serif;
+    color: #fff;
+    display: flex;
+    flex-direction: column; /* <--- Esto los pone uno sobre otro */
+    justify-content: center; 
+    align-items: center;     /* Esto los centra horizontalmente en la columna */
+    gap: 0.2rem;              /* Espacio entre cada elemento */
+    text-align: center;      /* Asegura que el texto dentro de los li también esté centrado */
+}
+
+.pie:hover {
+    color: #ff0;
+}
+
+ul {
+    list-style-type: none;
+}
+
+.enlace {
+    color: #fff;
+}
+
+.enlace:hover {
+    color: #ff0;
+}
+
+.menu-principal {
+    font-family: "Roboto", sans-serif;
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 0; /* Quita el espacio invisible que empuja a la izquierda */
+    margin: 0;
+    width: 100%;
+    gap: 20px;
+}
+
+@media (max-width: 600px) {
+    .menu-principal {
+        flex-direction: column;
+        align-items: center; /* Centra horizontalmente en móvil */
+        padding: 0;
+    }
+}
+
+.lp {
+    text-decoration: none;
+    color: #000;
+}
+
+.lp:hover {
+    color: #dddddd;
+}
+
+.metallica {
+    text-decoration: none;
+    color: #000;
+}
+
+.metallica:hover {
+    color: #dddddd;
+}
+
+li.active .enlace {
+    color: #ff0;
+}
+
+.banner-principal {
+    width: 100%;
+    /* 1. Mantenemos la proporción de tu diseño de Illustrator (1920/1080) */
+    aspect-ratio: 1920 / 1080; 
+    
+    /* 2. Cargamos la imagen */
+    background-image: url('img/banner.webp');
+    
+    /* 3. Ajustes de visualización */
+    background-size: contain;    /* CAMBIO: 'contain' asegura que se vea TODA la imagen */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: #000;      /* Fondo negro por si la pantalla es ultra ancha */
+
+    /* Nitidez */
+    image-rendering: -webkit-optimize-contrast;
+}
+
+/* 3. Ajuste para pantallas muy pequeñas */
+@media (max-width: 768px) {
+    .banner-principal {
+        /* En móvil, si la imagen se ve muy pequeña, podemos dejar que crezca un poco 
+           o usar una imagen diferente. Por ahora, mantenemos la proporción para que no se corte */
+        aspect-ratio: 1920 / 1080; 
+    }
+}
+
+/*playlist*/
+
+/* 1. EL CUERPO (Aseguramos que el fondo no afecte el ancho) */
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* 2. CONTENEDOR GENERAL - Aquí controlas el ancho total */
+.playlist {
+    width: 95%;           /* Para que no toque los bordes en el móvil */
+    max-width: 800px;    /* AQUÍ: Es el ancho máximo que pediste */
+    margin: 20px auto;    /* Centra la playlist y da espacio arriba/abajo */
+    text-align: center;
+    background: transparent;
+}
+
+/* 3. CONTENEDOR DE SCROLL - La "ventana" por donde se ven las canciones */
+.playlist-scroll {
+    width: 100%;          /* Se estira al ancho del padre (1000px) */
+    max-height: 400px;    /* Altura de la lista */
+    overflow-y: auto;
+    scroll-behavior: smooth;
+    margin: 10px 0;
+    border-radius: 10px;
+    background: transparent;
+}
+
+/* OCULTAR BARRA DE SCROLL */
+.playlist-scroll::-webkit-scrollbar {
+    display: none;
+}
+
+/* 4. LA LISTA BLANCA - Caja donde están las canciones */
+.playlist-list {
+    background-color: rgba(255, 255, 255, 0.7);
+    font-family: "Shadows Into Light", cursive;
+    color: #000;
+    border-radius: 10px;
+    margin: 0;
+    
+    /* CENTRADO DE LA LISTA INTERNA */
+    padding: 2rem 3rem;  /* Espacio interno */
+    display: flex;       /* Usamos flexbox */
+    flex-direction: column; 
+    align-items: center; /* Centra el bloque de la lista en el medio */
+}
+
+.playlist-list li {
+    margin-bottom: 0.8rem; /* Un poquito más de espacio entre canciones */
+}
+
+.playlist-list a {
+    text-decoration: none;
+    color: inherit;
+    transition: 0.3s;
+    display: inline-block; /* Mejora el área de clic */
+}
+
+.playlist-list a:hover {
+    color: #d4af37; /* Un dorado/amarillo oscuro para que se lea en el blanco */
+    transform: translateX(5px); /* Pequeño movimiento a la derecha */
+}
+
+/* 5. FLECHAS */
+.playlist-arrow {
+    font-size: 2.5rem;
+    cursor: pointer;
+    color: #000;
+    user-select: none;
+    line-height: 1;
+    transition: 0.3s;
+}
+
+.playlist-arrow:hover {
+    color: #d4af37;
+    transform: scale(1.2);
+}
+
+/* 6. REPRODUCTOR */
+.player {
+    width: 100%;
+    margin-top: 1.5rem;
+    background: none;
+    padding: 0;
+}
+
+.now-playing {
+    font-family: "Shadows Into Light", cursive;
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+    color: #000;
+    font-weight: bold;
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 10px;
+}
+
+.now-playing:hover {       
+    color: #ff0;
+   }
+
+
+.player-controls {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+}
+
+.player-controls button {
+    background: none;
+    border: none;
+    font-size: 2.5rem; /* Un poco más grandes para que luzcan */
+    cursor: pointer;
+    color: #000;
+    padding: 0;
+    transition: transform 0.2s, color 0.2s;
+}
+
+.player-controls button:hover {
+    color: #ff0;
+    transform: scale(1.1);
+}
