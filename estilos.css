@@ -230,7 +230,7 @@ body {
 }
 
 .playlist-list a:hover {
-    color: #d4af37; /* Un dorado/amarillo oscuro para que se lea en el blanco */
+    color: #ff0; /* Un dorado/amarillo oscuro para que se lea en el blanco */
     transform: translateX(5px); /* Pequeño movimiento a la derecha */
 }
 
